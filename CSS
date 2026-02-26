@@ -1,0 +1,67 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro tipo club de comedia */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.contenedor {
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+}
+
+.info-taller {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #f9d423;
+}
+
+.detalles {
+    list-style: none;
+    margin: 1.5rem 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.boton-accion {
+    background: #f9d423;
+    color: #1a1a1a;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.2s;
+}
+
+.boton-accion:hover {
+    transform: scale(1.05);
+}
+
+.oculto {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #333;
+    border-radius: 10px;
+}
