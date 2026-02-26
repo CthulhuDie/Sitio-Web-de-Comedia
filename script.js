@@ -1,19 +1,26 @@
-// Esperar a que el botón de inscripción sea clickeado
-const btn = document.getElementById('btn-reir');
-const zonaChiste = document.getElementById('zona-chiste');
+// Seleccionamos los elementos
+const textoChiste = document.getElementById('chiste-texto');
+const boton = document.getElementById('boton-chiste');
 
-btn.addEventListener('click', () => {
-    alert("¡Excelente elección! Prepárate para las risas.");
-    zonaChiste.classList.remove('oculto'); // Muestra la sección de chistes
-});
-
-function generarChiste() {
-    const chistes = [
-        "¿Por qué los programadores confunden Halloween con Navidad? Porque Oct 31 == Dec 25.",
-        "Un SQL entra en un bar, se acerca a dos mesas y pregunta: '¿Puedo unirme?'",
-        "Hay 10 tipos de personas en el mundo: las que entienden binario y las que no."
-    ];
+// Función para buscar el chiste
+async function obtenerChiste() {
+    textoChiste.innerText = "Cargando risas..."; // Feedback visual
     
-    const random = Math.floor(Math.random() * chistes.length);
-    document.getElementById('texto-chiste').innerText = chistes[random];
+    try {
+        // Pedimos un chiste de programación en español
+        const respuesta = await fetch('https://v2.jokeapi.dev/joke/Programming?lang=es&type=single');
+        const datos = await respuesta.json();
+
+        if (datos.joke) {
+            textoChiste.innerText = datos.joke;
+        } else {
+            textoChiste.innerText = "No encontré chistes nuevos, pero ¡sigue programando!";
+        }
+    } catch (error) {
+        textoChiste.innerText = "Error de conexión. ¡Hasta el servidor se rió!";
+        console.error("Hubo un error:", error);
+    }
 }
+
+// Escuchamos el clic
+boton.addEventListener('click', obtenerChiste);
