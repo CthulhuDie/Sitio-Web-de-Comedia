@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de la Comedia | Taller de Stand-Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>JA-JA STUDIO 🎭</h1>
+        <p>Donde la tragedia se vuelve risa.</p>
+    </header>
+
+    <main class="contenedor">
+        <section class="info-taller">
+            <h2>Taller de Stand-Up Comedy</h2>
+            <p>Aprende a escribir tus propios monólogos y a perder el miedo al micrófono.</p>
+            <ul class="detalles">
+                <li>📍 Ubicación: En vivo y Online</li>
+                <li>⏰ Horario: Sábados 18:00h</li>
+                <li>🔥 Nivel: Principiantes y avanzados</li>
+            </ul>
+            <button id="btn-reir" class="boton-accion">¡Quiero inscribirme!</button>
+        </section>
+
+        <section id="zona-chiste" class="oculto">
+            <div class="tarjeta-chiste">
+                <p id="texto-chiste">Haz clic abajo para un adelanto del taller...</p>
+                <button onclick="generarChiste()">Dame un chiste</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
